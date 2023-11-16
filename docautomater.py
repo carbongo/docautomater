@@ -3,6 +3,7 @@ import PySimpleGUI as sg
 import pandas as pd
 import docx
 
+# Define functions to read in table file
 def read_table_file(table_file):
     if table_file.endswith('.csv'):
         return pd.read_csv(table_file)
@@ -12,6 +13,7 @@ def read_table_file(table_file):
         sg.popup_error('Invalid table file format. Please select a csv or xlsx file.')
         return None
 
+# Define function to read in document file
 def read_doc_file(doc_file):
     if doc_file.endswith('.docx'):
         return docx.Document(doc_file)
@@ -19,6 +21,7 @@ def read_doc_file(doc_file):
         sg.popup_error('Invalid document file format. Please select a docx file.')
         return None
 
+# Define function to replace keywords with person's information
 def replace_keywords(doc, person_info):
     for p in doc.paragraphs:
         for key, value in person_info.items():
@@ -26,6 +29,7 @@ def replace_keywords(doc, person_info):
                 p.text = p.text.replace(key, str(value))
     return doc
 
+# Define function to save modified document file
 def save_modified_doc(doc, doc_file, person_info, output_folder):
     new_doc_file = os.path.join(output_folder, os.path.basename(doc_file).split('.')[0] + ' ' + list(person_info.values())[0] + '.' + doc_file.split('.')[1])
     doc.save(new_doc_file)
