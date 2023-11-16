@@ -31,3 +31,4 @@ Automated document creation software that streamlines the process based on a pro
 - PySimpleGUI: For creating the GUI.
 - pandas: For reading the table file (either `.csv` or `.xlsx`).
 - python-docx: For reading and modifying the `.docx` document file.
+- openpyxl: For reading `.xlsx` expanding pandas.
