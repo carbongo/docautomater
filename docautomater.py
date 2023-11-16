@@ -43,7 +43,7 @@ layout = [
 ]
 
 # Create PySimpleGUI window
-window = sg.Window('Document Automater', layout)
+window = sg.Window('Document Automater v1.0.0', layout)
 
 # Event loop
 while True:
