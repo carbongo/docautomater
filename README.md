@@ -1,6 +1,6 @@
 # docautomater
 
-Automated document creation software that streamlines the process based on a provided list, utilizing customizable templates.
+Automated document creation software that streamlines the process based on a provided list, utilising customisable templates.
 
 ## Requirements
 
