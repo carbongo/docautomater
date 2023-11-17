@@ -8,7 +8,7 @@ def read_table_file(table_file):
     if table_file.endswith('.csv'):
         return pd.read_csv(table_file)
     elif table_file.endswith('.xlsx'):
-        return pd.read_excel(table_file)
+        return pd.read_excel(table_file, engine='openpyxl')
     else:
         sg.popup_error('Invalid table file format. Please select a csv or xlsx file.')
         return None
@@ -43,7 +43,7 @@ layout = [
 ]
 
 # Create PySimpleGUI window
-window = sg.Window('Document Automater v1.0.0', layout)
+window = sg.Window('Document Automater v1.0.1', layout)
 
 # Event loop
 while True:
